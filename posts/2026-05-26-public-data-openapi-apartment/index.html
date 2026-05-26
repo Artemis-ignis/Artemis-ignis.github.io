@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="국토교통부 아파트 매매 실거래가 OpenAPI 문서를 예시로, 필수 파라미터와 인증키, REST GET 요청, XML 응답을 읽는 법을 정리했다.">
+    <title>2026-05-26 이어드림스쿨 수업 정리: 공공데이터 OpenAPI 읽는 법 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-26">2026.05.26</time>
+      <h1>2026-05-26 이어드림스쿨 수업 정리: 공공데이터 OpenAPI 읽는 법</h1>
+    </header>
+    <div class="article-body">
+      <p><img src="/images/posts/public-data-openapi-apartment.webp" alt="공공데이터 OpenAPI 요청 흐름"></p>
+<p>아파트 매매 실거래가 자료 기술문서는 오늘 배운 API 개념을 실제 문서에서 확인하는 예시로 보기 좋았다. 수업에서 배운 REST API, 요청과 응답, XML, 인증키가 한꺼번에 나온다.</p>
+<p>중요한 점부터 정리하면, 공공데이터 API는 주소만 브라우저에 넣는다고 끝나는 게 아니다. 필요한 파라미터를 같이 보내야 하고, 인증키도 안전하게 다뤄야 한다.</p>
+<h2 id="openapi는-공개된-약속이다">OpenAPI는 공개된 약속이다</h2>
+<p>OpenAPI는 외부에서 사용할 수 있도록 공개된 API다. 공공데이터 API는 정부나 기관이 가진 데이터를 정해진 방식으로 요청할 수 있게 해준다.</p>
+<p>하지만 &ldquo;공개&quot;라는 말이 아무렇게나 써도 된다는 뜻은 아니다. 요청 주소, 필수 파라미터, 인증 방식, 응답 형식을 문서대로 맞춰야 한다.</p>
+<h2 id="필수-파라미터를-확인해야-한다">필수 파라미터를 확인해야 한다</h2>
+<p>아파트 매매 실거래가 API 같은 공공데이터 API는 보통 요청할 때 필요한 값이 있다.</p>
+<p>예를 들어 이런 값이 필요할 수 있다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>파라미터</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>serviceKey</td>
+          <td>API 인증키</td>
+      </tr>
+      <tr>
+          <td>지역코드</td>
+          <td>조회할 지역</td>
+      </tr>
+      <tr>
+          <td>계약월</td>
+          <td>조회할 계약 시점</td>
+      </tr>
+  </tbody>
+</table>
+<p>실제 serviceKey 값은 절대 블로그 글이나 공개 저장소에 넣으면 안 된다. 인증키는 비밀번호처럼 다뤄야 한다.</p>
+<p>요청 모양은 대략 이렇게 이해하면 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>GET 공공데이터_API_주소?serviceKey=발급받은키&amp;LAWD_CD=지역코드&amp;DEAL_YMD=계약월
+</span></span></code></pre></div><p>위 예시는 구조를 설명하기 위한 자리 표시자다. 실제 키 값은 넣지 않았다.</p>
+<h2 id="rest-get-요청과-xml-응답">REST GET 요청과 XML 응답</h2>
+<p>해당 API는 REST GET 방식으로 요청한다. 브라우저 주소창에 URL을 넣는 것도 GET 요청의 한 종류라고 볼 수 있다.</p>
+<p>응답은 XML 형식으로 받을 수 있다. XML은 태그로 데이터를 감싸는 형식이다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;item&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;region&gt;</span>지역 A<span style="color:#f92672">&lt;/region&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;dealMonth&gt;</span>계약월<span style="color:#f92672">&lt;/dealMonth&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;amount&gt;</span>거래금액<span style="color:#f92672">&lt;/amount&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/item&gt;</span>
+</span></span></code></pre></div><p>실제 문서의 필드명은 문서 기준으로 확인해야 한다. 블로그 글에서는 개인정보나 인증키가 들어가지 않도록 익명 예시만 사용했다.</p>
+<h2 id="api-문서를-읽을-때-보는-순서">API 문서를 읽을 때 보는 순서</h2>
+<p>처음 API 문서를 보면 표와 항목이 많아서 복잡하다. 나는 다음 순서로 보는 게 편했다.</p>
+<ol>
+<li>요청 주소가 무엇인지 확인한다.</li>
+<li>요청 방식이 GET인지 POST인지 확인한다.</li>
+<li>필수 파라미터를 확인한다.</li>
+<li>인증키가 필요한지 확인한다.</li>
+<li>응답 형식이 JSON인지 XML인지 확인한다.</li>
+<li>응답 필드 중 실제로 쓸 값만 표시해본다.</li>
+<li>오류 코드나 제한 사항을 확인한다.</li>
+</ol>
+<p>이 순서로 보면 문서가 조금 덜 무섭다.</p>
+<h2 id="서비스에-붙일-때는-서버-쪽에서-다루는-게-안전하다">서비스에 붙일 때는 서버 쪽에서 다루는 게 안전하다</h2>
+<p>공공데이터 API를 웹서비스에 붙일 때는 인증키를 프론트엔드에 그대로 노출하지 않는 편이 안전하다. 브라우저에서 보이는 코드에 키를 넣으면 다른 사람이 가져갈 수 있기 때문이다.</p>
+<p>보통은 서버가 공공데이터 API에 요청하고, 서버가 필요한 데이터만 정리해서 클라이언트에 보내는 구조가 낫다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>클라이언트 → 내 서버 → 공공데이터 API → 내 서버 → 클라이언트
+</span></span></code></pre></div><p>이렇게 하면 인증키를 서버 쪽에서 관리할 수 있고, 응답 데이터도 서비스에 맞게 정리할 수 있다.</p>
+<h2 id="내-식으로-정리">내 식으로 정리</h2>
+<p>공공데이터 OpenAPI 문서는 오늘 배운 개념을 실제로 확인하는 연습장 같았다. API 주소, GET 요청, 파라미터, 인증키, XML 응답이 모두 들어 있다.</p>
+<p>핵심은 문서대로 요청을 만드는 것과 인증키를 안전하게 다루는 것이다. API를 쓸 줄 안다는 건 주소를 복사하는 게 아니라, 필요한 값과 응답 구조를 읽고 서비스 흐름에 맞게 연결하는 일이다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

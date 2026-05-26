@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="라이브러리와 프레임워크의 차이, pandas와 Django가 각각 어떤 문제를 해결하는 도구인지 쉽게 정리했다.">
+    <title>2026-05-26 이어드림스쿨 수업 정리: 라이브러리와 프레임워크, pandas와 Django | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-26">2026.05.26</time>
+      <h1>2026-05-26 이어드림스쿨 수업 정리: 라이브러리와 프레임워크, pandas와 Django</h1>
+    </header>
+    <div class="article-body">
+      <p><img src="/images/posts/library-framework-pandas-django.webp" alt="라이브러리와 프레임워크 비교"></p>
+<p><code>라이브러리와 프레임워크</code> 자료를 보면서 가장 먼저 정리한 건 이 차이다. 라이브러리는 필요한 도구를 꺼내 쓰는 느낌이고, 프레임워크는 집을 지을 때 기본 골조가 이미 잡혀 있는 느낌이다.</p>
+<p>둘 다 남이 미리 만들어둔 도움을 쓰는 것이지만, 주도권이 조금 다르다.</p>
+<h2 id="라이브러리는-공구함에-가깝다">라이브러리는 공구함에 가깝다</h2>
+<p>라이브러리는 남들이 미리 만들어둔 도구 모음이다. 내가 필요할 때 가져다 쓴다.</p>
+<p>예를 들어 엑셀 파일을 직접 한 줄씩 해석하려면 힘들다. 그런데 pandas를 쓰면 표 데이터를 쉽게 불러오고 다룰 수 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_excel(<span style="color:#e6db74">&#34;data.xlsx&#34;</span>)
+</span></span></code></pre></div><p><code>pd.read_excel()</code> 한 줄로 엑셀 파일을 불러올 수 있다는 점이 pandas의 강점이다. 물론 실제 프로젝트에서는 파일 경로, 시트 이름, 결측치, 데이터 타입도 확인해야 한다. 그래도 처음부터 모든 기능을 직접 만들 필요가 없다는 점이 크다.</p>
+<h2 id="pandas는-데이터-분석-도구다">pandas는 데이터 분석 도구다</h2>
+<p>pandas는 파이썬에서 표 데이터를 다루는 대표적인 라이브러리다. 엑셀처럼 행과 열로 된 데이터를 읽고, 정리하고, 집계하고, 분석할 때 자주 쓴다.</p>
+<p>주로 이런 일을 한다.</p>
+<ol>
+<li>엑셀이나 CSV 파일 읽기</li>
+<li>필요한 열만 선택하기</li>
+<li>결측치 확인하기</li>
+<li>그룹별 합계나 평균 구하기</li>
+<li>분석하기 좋은 형태로 데이터 정리하기</li>
+</ol>
+<p>초보자 입장에서는 pandas를 &ldquo;파이썬 안의 엑셀 작업 도우미&quot;라고 생각하면 이해가 쉽다.</p>
+<h2 id="프레임워크는-기본-구조에-가깝다">프레임워크는 기본 구조에 가깝다</h2>
+<p>프레임워크는 단순한 도구 하나보다 더 큰 틀이다. 웹서비스를 만들 때 필요한 기본 구조를 제공하고, 개발자는 그 구조 안에서 기능을 채운다.</p>
+<p>Django는 &ldquo;장고&quot;라고 읽는다. 파이썬으로 웹사이트와 백엔드를 만들 때 쓰는 웹 프레임워크다.</p>
+<p>Django는 이런 기능을 만들 때 도움을 준다.</p>
+<ol>
+<li>URL 연결</li>
+<li>화면 처리</li>
+<li>데이터베이스 모델</li>
+<li>로그인과 인증</li>
+<li>관리자 페이지</li>
+<li>서버 쪽 로직 구성</li>
+</ol>
+<p>작은 스크립트를 만들 때는 pandas 같은 라이브러리만으로 충분할 수 있다. 하지만 로그인, 게시판, 관리자 페이지, 데이터베이스가 있는 웹서비스를 만들려면 Django 같은 프레임워크가 훨씬 편하다.</p>
+<h2 id="라이브러리와-프레임워크의-차이">라이브러리와 프레임워크의 차이</h2>
+<table>
+  <thead>
+      <tr>
+          <th>구분</th>
+          <th>라이브러리</th>
+          <th>프레임워크</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>비유</td>
+          <td>공구함</td>
+          <td>건물 골조</td>
+      </tr>
+      <tr>
+          <td>주도권</td>
+          <td>내가 필요할 때 호출</td>
+          <td>정해진 구조 안에서 작성</td>
+      </tr>
+      <tr>
+          <td>예시</td>
+          <td>pandas, requests</td>
+          <td>Django, Flask, Spring</td>
+      </tr>
+      <tr>
+          <td>잘 맞는 일</td>
+          <td>특정 기능 해결</td>
+          <td>서비스 전체 구조 만들기</td>
+      </tr>
+  </tbody>
+</table>
+<p>핵심은 &ldquo;누가 흐름을 잡고 있느냐&quot;다. 라이브러리는 내가 필요할 때 부른다. 프레임워크는 프레임워크가 정한 흐름에 맞춰 내가 코드를 넣는다.</p>
+<h2 id="내-식으로-정리">내 식으로 정리</h2>
+<p>pandas와 Django는 둘 다 파이썬 생태계의 도구지만 목적이 다르다.</p>
+<p>pandas는 데이터를 분석하기 위한 도구다. Django는 웹서비스를 만들기 위한 구조다. 같은 파이썬을 쓰더라도 하나는 표 데이터를 정리하는 데 강하고, 하나는 서버와 웹서비스를 구성하는 데 강하다.</p>
+<p>오늘 정리한 기준은 앞으로 새 도구를 배울 때도 쓸 수 있을 것 같다. &ldquo;이건 작은 기능을 도와주는 라이브러리인가, 아니면 전체 구조를 잡아주는 프레임워크인가?&ldquo;라고 먼저 물어보면 된다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

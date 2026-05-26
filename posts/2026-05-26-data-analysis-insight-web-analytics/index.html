@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="데이터 분석의 흐름, 결과와 인사이트의 차이, 보고서 작성, Google Analytics 같은 웹분석 도구의 역할을 정리했다.">
+    <title>2026-05-26 이어드림스쿨 수업 정리: 데이터 분석은 그래프보다 설명이다 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-26">2026.05.26</time>
+      <h1>2026-05-26 이어드림스쿨 수업 정리: 데이터 분석은 그래프보다 설명이다</h1>
+    </header>
+    <div class="article-body">
+      <p><img src="/images/posts/data-analysis-web-analytics.webp" alt="데이터 분석과 웹분석 흐름"></p>
+<p>오늘 수업에서 데이터 분석 파트는 코딩보다 &ldquo;설명&quot;에 가까웠다. 표를 만들고 그래프를 그리는 건 분석의 끝이 아니라 중간 과정이다. 진짜 중요한 건 그 숫자가 무슨 뜻인지 말할 수 있는가다.</p>
+<h2 id="데이터-분석이란-무엇인가">데이터 분석이란 무엇인가</h2>
+<p>데이터 분석은 데이터를 보고 의미를 찾아내고, 그 의미를 다른 사람이 이해할 수 있게 설명하는 일이다.</p>
+<p>방문자 수 그래프를 만들었다고 분석이 끝나는 건 아니다. 방문자가 왜 줄었는지, 어느 페이지에서 많이 나갔는지, 다음에는 무엇을 바꾸면 좋을지를 말할 수 있어야 한다.</p>
+<p>양적 연구는 숫자와 통계 중심의 분석이다. 방문자 수, 매출, 클릭 수, 체류 시간처럼 숫자로 볼 수 있는 데이터를 다룬다.</p>
+<p>질적 연구는 사람과 맥락을 이해하는 분석이다. 인터뷰, 관찰, 후기처럼 숫자만으로는 알기 어려운 이유를 살펴본다.</p>
+<p>이어드림스쿨에서는 주로 양적 연구를 배우지만, 좋은 분석가는 숫자 뒤의 맥락도 봐야 한다. 숫자는 현상을 보여주고, 맥락은 이유를 생각하게 해준다.</p>
+<h2 id="데이터-분석-흐름">데이터 분석 흐름</h2>
+<p>분석 흐름은 이렇게 정리할 수 있다.</p>
+<ol>
+<li>데이터 수집</li>
+<li>데이터 정리</li>
+<li>결측치와 이상치 처리</li>
+<li>그룹별 집계</li>
+<li>시각화</li>
+<li>통계적 해석</li>
+<li>인사이트 도출</li>
+<li>보고서 작성</li>
+<li>발표와 의사결정 연결</li>
+</ol>
+<p>처음엔 이 순서가 길어 보이지만, 실제로는 &ldquo;재료 준비 → 요리 → 맛 설명 → 다음 메뉴 제안&rdquo; 같은 흐름이다.</p>
+<h2 id="결과와-인사이트는-다르다">결과와 인사이트는 다르다</h2>
+<p>결과는 데이터로 확인된 사실이다.</p>
+<blockquote>
+<p>방문자 수가 20% 줄었다.</p>
+</blockquote>
+<p>이 문장은 결과다. 숫자로 확인한 사실을 말한다.</p>
+<p>인사이트는 숫자의 의미와 다음 행동을 설명한다.</p>
+<blockquote>
+<p>모바일 첫 화면 이탈률이 높아졌기 때문에 버튼 위치와 문구를 개선해야 한다.</p>
+</blockquote>
+<p>이 문장은 인사이트에 가깝다. 단순히 줄었다고 말하는 데서 끝나지 않고, 왜 그런지 추정하고 다음 행동으로 연결한다.</p>
+<h2 id="보고서에는-무엇이-들어가야-할까">보고서에는 무엇이 들어가야 할까</h2>
+<p>분석 보고서는 코드 모음이 아니다. 의사결정에 쓸 수 있는 설명이어야 한다.</p>
+<p>보고서에는 최소한 이런 내용이 들어가면 좋다.</p>
+<ol>
+<li>분석 목적</li>
+<li>사용 데이터</li>
+<li>핵심 결과</li>
+<li>인사이트</li>
+<li>원인 추정</li>
+<li>개선 제안</li>
+<li>한계와 추가 확인 사항</li>
+</ol>
+<p>특히 한계와 추가 확인 사항을 적는 게 중요하다. 확인하지 않은 내용을 확정처럼 쓰면 분석이 아니라 추측이 된다.</p>
+<h2 id="google-analytics와-웹분석-도구">Google Analytics와 웹분석 도구</h2>
+<p>웹이나 앱을 만든 뒤에는 Google Analytics 같은 웹분석 도구를 붙여 사용자 행동을 볼 수 있다.</p>
+<p>확인할 수 있는 지표는 예를 들어 이런 것들이다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>지표</th>
+          <th>볼 수 있는 것</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>방문자 수</td>
+          <td>얼마나 많은 사람이 왔는지</td>
+      </tr>
+      <tr>
+          <td>페이지 조회수</td>
+          <td>어떤 페이지가 많이 열렸는지</td>
+      </tr>
+      <tr>
+          <td>체류 시간</td>
+          <td>사용자가 얼마나 머물렀는지</td>
+      </tr>
+      <tr>
+          <td>이탈률</td>
+          <td>어디서 나갔는지</td>
+      </tr>
+      <tr>
+          <td>버튼 클릭</td>
+          <td>어떤 행동을 했는지</td>
+      </tr>
+      <tr>
+          <td>전환율</td>
+          <td>회원가입이나 구매까지 갔는지</td>
+      </tr>
+  </tbody>
+</table>
+<p>예를 들어 회원가입 버튼은 많이 눌리는데 가입 완료율이 낮다면, 가입 과정이 복잡하거나 입력 항목이 많을 수 있다.</p>
+<p>분석 도구를 붙이는 것 자체가 목적은 아니다. 분석 도구는 사용자의 행동을 이해하고 서비스를 더 좋게 만들기 위한 눈이다.</p>
+<h2 id="내-식으로-정리">내 식으로 정리</h2>
+<p>데이터 분석의 최종 결과물은 코드가 아니라 설명이다. 코드는 분석을 도와주는 도구이고, 그래프는 설명을 돕는 그림이다.</p>
+<p>분석가는 숫자를 보고 &ldquo;그래서 무엇을 해야 하는가&quot;까지 말할 수 있어야 한다. 오늘 배운 데이터 분석은 결국 서비스를 더 나은 방향으로 바꾸기 위한 대화 도구에 가깝다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

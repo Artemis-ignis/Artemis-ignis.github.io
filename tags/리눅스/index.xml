@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>리눅스 on Artemis Ignis Blog</title>
+    <link>https://artemis-ignis.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</link>
+    <description>Recent content in 리눅스 on Artemis Ignis Blog</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 26 May 2026 09:10:00 +0900</lastBuildDate>
+    <atom:link href="https://artemis-ignis.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2026-05-26 이어드림스쿨 수업 정리: 컴퓨터는 코드를 어떻게 이해할까</title>
+      <link>https://artemis-ignis.github.io/posts/2026-05-26-computer-basics-language-linux/</link>
+      <pubDate>Tue, 26 May 2026 09:10:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/posts/2026-05-26-computer-basics-language-linux/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://artemis-ignis.github.io/images/posts/computer-basics-language-linux.webp&#34; alt=&#34;컴퓨터와 프로그래밍 언어 흐름&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;오늘 &lt;code&gt;컴퓨터의 이해&lt;/code&gt; 자료에서 가장 크게 잡은 감각은 이것이다. 사람은 사람이 읽기 쉬운 말로 코드를 쓰고, 컴퓨터는 그 코드를 바로 읽는 게 아니라 자기 방식으로 번역해서 실행한다.&lt;/p&gt;&#xA;&lt;p&gt;처음에는 &amp;ldquo;파이썬 코드를 치면 컴퓨터가 그대로 알아듣는 것 아닌가?&amp;ldquo;라고 생각하기 쉽다. 그런데 실제로는 중간에 번역자가 있다. 그 번역자가 인터프리터이거나 컴파일러다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;코드가-실행되는-흐름&#34;&gt;코드가 실행되는 흐름&lt;/h2&gt;&#xA;&lt;p&gt;흐름만 보면 생각보다 단순하다.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;사람이 코드를 작성한다.&lt;/li&gt;&#xA;&lt;li&gt;인터프리터나 컴파일러가 코드를 번역한다.&lt;/li&gt;&#xA;&lt;li&gt;컴퓨터가 이해할 수 있는 형태로 바뀐다.&lt;/li&gt;&#xA;&lt;li&gt;컴퓨터가 명령을 실행한다.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;인터프리터는 코드를 한 줄씩 읽고 실행하는 방식이다. 파이썬이 대표적이다. 선생님이 문장을 한 줄씩 읽어주면 학생이 바로 따라 하는 느낌에 가깝다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

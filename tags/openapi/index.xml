@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenAPI on Artemis Ignis Blog</title>
+    <link>https://artemis-ignis.github.io/tags/openapi/</link>
+    <description>Recent content in OpenAPI on Artemis Ignis Blog</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 26 May 2026 10:00:00 +0900</lastBuildDate>
+    <atom:link href="https://artemis-ignis.github.io/tags/openapi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2026-05-26 이어드림스쿨 수업 정리: 공공데이터 OpenAPI 읽는 법</title>
+      <link>https://artemis-ignis.github.io/posts/2026-05-26-public-data-openapi-apartment/</link>
+      <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/posts/2026-05-26-public-data-openapi-apartment/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://artemis-ignis.github.io/images/posts/public-data-openapi-apartment.webp&#34; alt=&#34;공공데이터 OpenAPI 요청 흐름&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;아파트 매매 실거래가 자료 기술문서는 오늘 배운 API 개념을 실제 문서에서 확인하는 예시로 보기 좋았다. 수업에서 배운 REST API, 요청과 응답, XML, 인증키가 한꺼번에 나온다.&lt;/p&gt;&#xA;&lt;p&gt;중요한 점부터 정리하면, 공공데이터 API는 주소만 브라우저에 넣는다고 끝나는 게 아니다. 필요한 파라미터를 같이 보내야 하고, 인증키도 안전하게 다뤄야 한다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;openapi는-공개된-약속이다&#34;&gt;OpenAPI는 공개된 약속이다&lt;/h2&gt;&#xA;&lt;p&gt;OpenAPI는 외부에서 사용할 수 있도록 공개된 API다. 공공데이터 API는 정부나 기관이 가진 데이터를 정해진 방식으로 요청할 수 있게 해준다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
