@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f7f2;
+  --panel: #ffffff;
+  --text: #1d2430;
+  --muted: #667085;
+  --line: #d9ded6;
+  --accent: #1d7a6b;
+  --accent-dark: #145f54;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, "Malgun Gothic", sans-serif;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent), transparent 45%);
+  text-underline-offset: 0.18em;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.brand {
+  color: var(--accent-dark);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.hero,
+.page-title,
+.section,
+.article {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.eyebrow,
+time {
+  color: var(--accent-dark);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.hero h1,
+.page-title h1,
+.article-header h1 {
+  max-width: 760px;
+  margin-bottom: 16px;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.05;
+}
+
+.hero p,
+.post-card p,
+.article-body {
+  color: var(--muted);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.post-list {
+  display: grid;
+  gap: 16px;
+}
+
+.post-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 20px;
+}
+
+.post-card h2,
+.post-card h3 {
+  margin: 8px 0;
+}
+
+.article {
+  max-width: 760px;
+}
+
+.article-body {
+  font-size: 18px;
+}
+
+.site-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
