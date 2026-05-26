@@ -8,10 +8,19 @@
     <loc>https://artemis-ignis.github.io/categories/</loc>
     <lastmod>2026-05-26T10:00:00+09:00</lastmod>
   </url><url>
+    <loc>https://artemis-ignis.github.io/categories/lesson-review/</loc>
+    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://artemis-ignis.github.io/tags/openapi/</loc>
     <lastmod>2026-05-26T10:00:00+09:00</lastmod>
   </url><url>
+    <loc>https://artemis-ignis.github.io/tags/public-data/</loc>
+    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
+  </url><url>
     <loc>https://artemis-ignis.github.io/tags/rest-api/</loc>
+    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
+  </url><url>
+    <loc>https://artemis-ignis.github.io/tags/security/</loc>
     <lastmod>2026-05-26T10:00:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/tags/</loc>
@@ -20,16 +29,7 @@
     <loc>https://artemis-ignis.github.io/tags/xml/</loc>
     <lastmod>2026-05-26T10:00:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/</loc>
-    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
-  </url><url>
     <loc>https://artemis-ignis.github.io/posts/</loc>
-    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%B3%B4%EC%95%88/</loc>
-    <lastmod>2026-05-26T10:00:00+09:00</lastmod>
-  </url><url>
-    <loc>https://artemis-ignis.github.io/categories/%EC%88%98%EC%97%85-%EC%A0%95%EB%A6%AC/</loc>
     <lastmod>2026-05-26T10:00:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/</loc>
@@ -41,34 +41,34 @@
     <loc>https://artemis-ignis.github.io/tags/django/</loc>
     <lastmod>2026-05-26T09:50:00+09:00</lastmod>
   </url><url>
+    <loc>https://artemis-ignis.github.io/tags/framework/</loc>
+    <lastmod>2026-05-26T09:50:00+09:00</lastmod>
+  </url><url>
+    <loc>https://artemis-ignis.github.io/tags/library/</loc>
+    <lastmod>2026-05-26T09:50:00+09:00</lastmod>
+  </url><url>
     <loc>https://artemis-ignis.github.io/tags/pandas/</loc>
     <lastmod>2026-05-26T09:50:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/tags/python/</loc>
     <lastmod>2026-05-26T09:50:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</loc>
-    <lastmod>2026-05-26T09:50:00+09:00</lastmod>
-  </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/</loc>
-    <lastmod>2026-05-26T09:50:00+09:00</lastmod>
-  </url><url>
     <loc>https://artemis-ignis.github.io/posts/2026-05-26-data-analysis-insight-web-analytics/</loc>
+    <lastmod>2026-05-26T09:40:00+09:00</lastmod>
+  </url><url>
+    <loc>https://artemis-ignis.github.io/tags/data-analysis/</loc>
     <lastmod>2026-05-26T09:40:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/tags/google-analytics/</loc>
     <lastmod>2026-05-26T09:40:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</loc>
+    <loc>https://artemis-ignis.github.io/tags/insight/</loc>
     <lastmod>2026-05-26T09:40:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%B3%B4%EA%B3%A0%EC%84%9C/</loc>
+    <loc>https://artemis-ignis.github.io/tags/report/</loc>
     <lastmod>2026-05-26T09:40:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%9B%B9%EB%B6%84%EC%84%9D/</loc>
-    <lastmod>2026-05-26T09:40:00+09:00</lastmod>
-  </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8/</loc>
+    <loc>https://artemis-ignis.github.io/tags/web-analytics/</loc>
     <lastmod>2026-05-26T09:40:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/posts/2026-05-26-rest-api-database-basics/</loc>
@@ -77,46 +77,46 @@
     <loc>https://artemis-ignis.github.io/tags/crud/</loc>
     <lastmod>2026-05-26T09:30:00+09:00</lastmod>
   </url><url>
+    <loc>https://artemis-ignis.github.io/tags/database/</loc>
+    <lastmod>2026-05-26T09:30:00+09:00</lastmod>
+  </url><url>
     <loc>https://artemis-ignis.github.io/tags/json/</loc>
     <lastmod>2026-05-26T09:30:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/tags/sql/</loc>
     <lastmod>2026-05-26T09:30:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</loc>
-    <lastmod>2026-05-26T09:30:00+09:00</lastmod>
-  </url><url>
     <loc>https://artemis-ignis.github.io/posts/2026-05-26-web-service-planning-client-server/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%B0%B1%EC%97%94%EB%93%9C/</loc>
+    <loc>https://artemis-ignis.github.io/tags/backend/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B2%84/</loc>
+    <loc>https://artemis-ignis.github.io/tags/client/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B8%B0%ED%9A%8D/</loc>
+    <loc>https://artemis-ignis.github.io/tags/server/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</loc>
+    <loc>https://artemis-ignis.github.io/tags/service-planning/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8/</loc>
+    <loc>https://artemis-ignis.github.io/tags/web-service/</loc>
     <lastmod>2026-05-26T09:20:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/posts/2026-05-26-computer-basics-language-linux/</loc>
     <lastmod>2026-05-26T09:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/it-%EB%A6%AC%ED%84%B0%EB%9F%AC%EC%8B%9C/</loc>
+    <loc>https://artemis-ignis.github.io/tags/computer-basics/</loc>
     <lastmod>2026-05-26T09:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</loc>
+    <loc>https://artemis-ignis.github.io/tags/it-literacy/</loc>
     <lastmod>2026-05-26T09:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%98-%EC%9D%B4%ED%95%B4/</loc>
+    <loc>https://artemis-ignis.github.io/tags/linux/</loc>
     <lastmod>2026-05-26T09:10:00+09:00</lastmod>
   </url><url>
-    <loc>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4/</loc>
+    <loc>https://artemis-ignis.github.io/tags/programming-language/</loc>
     <lastmod>2026-05-26T09:10:00+09:00</lastmod>
   </url><url>
     <loc>https://artemis-ignis.github.io/posts/first-post/</loc>

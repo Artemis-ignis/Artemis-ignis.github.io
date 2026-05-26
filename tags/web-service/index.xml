@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web-Service on Artemis Ignis Blog</title>
+    <link>https://artemis-ignis.github.io/tags/web-service/</link>
+    <description>Recent content in Web-Service on Artemis Ignis Blog</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 26 May 2026 09:20:00 +0900</lastBuildDate>
+    <atom:link href="https://artemis-ignis.github.io/tags/web-service/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2026-05-26 이어드림스쿨 수업 정리: 앱·웹 서비스는 화면 뒤에서 어떻게 돌아갈까</title>
+      <link>https://artemis-ignis.github.io/posts/2026-05-26-web-service-planning-client-server/</link>
+      <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/posts/2026-05-26-web-service-planning-client-server/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://artemis-ignis.github.io/images/posts/web-service-client-server.webp&#34; alt=&#34;앱과 웹서비스의 요청 응답 흐름&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;앱_웹 서비스를 위한 모든 것&lt;/code&gt; 자료에서 핵심은 하나였다. 서비스는 예쁜 화면만으로 완성되지 않는다. 사용자가 보는 화면 뒤에는 서버, 데이터베이스, 관리자 기능, 보안, 개인정보 처리까지 줄줄이 붙어 있다.&lt;/p&gt;&#xA;&lt;p&gt;초보자는 화면을 먼저 본다. 버튼이 있고, 입력창이 있고, 결과가 보이면 서비스처럼 느껴진다. 하지만 실제 운영 가능한 서비스는 버튼을 누른 뒤에 무슨 일이 일어나는지가 더 중요하다.&lt;/p&gt;&#xA;&lt;h2 id=&#34;클라이언트와-서버&#34;&gt;클라이언트와 서버&lt;/h2&gt;&#xA;&lt;p&gt;클라이언트는 사용자가 직접 보는 쪽이다. 웹브라우저, 스마트폰 앱, 화면에 보이는 버튼과 입력창이 여기에 가깝다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

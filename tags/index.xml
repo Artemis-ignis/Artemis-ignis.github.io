@@ -9,38 +9,38 @@
     <lastBuildDate>Tue, 26 May 2026 10:00:00 +0900</lastBuildDate>
     <atom:link href="https://artemis-ignis.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OpenAPI</title>
+      <title>Openapi</title>
       <link>https://artemis-ignis.github.io/tags/openapi/</link>
       <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/openapi/</guid>
       <description></description>
     </item>
     <item>
-      <title>REST API</title>
+      <title>Public-Data</title>
+      <link>https://artemis-ignis.github.io/tags/public-data/</link>
+      <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/public-data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rest-Api</title>
       <link>https://artemis-ignis.github.io/tags/rest-api/</link>
       <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/rest-api/</guid>
       <description></description>
     </item>
     <item>
-      <title>XML</title>
+      <title>Security</title>
+      <link>https://artemis-ignis.github.io/tags/security/</link>
+      <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xml</title>
       <link>https://artemis-ignis.github.io/tags/xml/</link>
       <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/xml/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>공공데이터</title>
-      <link>https://artemis-ignis.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
-      <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>보안</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%B3%B4%EC%95%88/</link>
-      <pubDate>Tue, 26 May 2026 10:00:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%B3%B4%EC%95%88/</guid>
       <description></description>
     </item>
     <item>
@@ -48,6 +48,20 @@
       <link>https://artemis-ignis.github.io/tags/django/</link>
       <pubDate>Tue, 26 May 2026 09:50:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/django/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Framework</title>
+      <link>https://artemis-ignis.github.io/tags/framework/</link>
+      <pubDate>Tue, 26 May 2026 09:50:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/framework/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Library</title>
+      <link>https://artemis-ignis.github.io/tags/library/</link>
+      <pubDate>Tue, 26 May 2026 09:50:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/library/</guid>
       <description></description>
     </item>
     <item>
@@ -65,143 +79,129 @@
       <description></description>
     </item>
     <item>
-      <title>라이브러리</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
-      <pubDate>Tue, 26 May 2026 09:50:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</guid>
+      <title>Data-Analysis</title>
+      <link>https://artemis-ignis.github.io/tags/data-analysis/</link>
+      <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/data-analysis/</guid>
       <description></description>
     </item>
     <item>
-      <title>프레임워크</title>
-      <link>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/</link>
-      <pubDate>Tue, 26 May 2026 09:50:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Google Analytics</title>
+      <title>Google-Analytics</title>
       <link>https://artemis-ignis.github.io/tags/google-analytics/</link>
       <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/google-analytics/</guid>
       <description></description>
     </item>
     <item>
-      <title>데이터 분석</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</link>
+      <title>Insight</title>
+      <link>https://artemis-ignis.github.io/tags/insight/</link>
       <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D/</guid>
+      <guid>https://artemis-ignis.github.io/tags/insight/</guid>
       <description></description>
     </item>
     <item>
-      <title>보고서</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%B3%B4%EA%B3%A0%EC%84%9C/</link>
+      <title>Report</title>
+      <link>https://artemis-ignis.github.io/tags/report/</link>
       <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%B3%B4%EA%B3%A0%EC%84%9C/</guid>
+      <guid>https://artemis-ignis.github.io/tags/report/</guid>
       <description></description>
     </item>
     <item>
-      <title>웹분석</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%9B%B9%EB%B6%84%EC%84%9D/</link>
+      <title>Web-Analytics</title>
+      <link>https://artemis-ignis.github.io/tags/web-analytics/</link>
       <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%9B%B9%EB%B6%84%EC%84%9D/</guid>
+      <guid>https://artemis-ignis.github.io/tags/web-analytics/</guid>
       <description></description>
     </item>
     <item>
-      <title>인사이트</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8/</link>
-      <pubDate>Tue, 26 May 2026 09:40:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CRUD</title>
+      <title>Crud</title>
       <link>https://artemis-ignis.github.io/tags/crud/</link>
       <pubDate>Tue, 26 May 2026 09:30:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/crud/</guid>
       <description></description>
     </item>
     <item>
-      <title>JSON</title>
+      <title>Database</title>
+      <link>https://artemis-ignis.github.io/tags/database/</link>
+      <pubDate>Tue, 26 May 2026 09:30:00 +0900</pubDate>
+      <guid>https://artemis-ignis.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json</title>
       <link>https://artemis-ignis.github.io/tags/json/</link>
       <pubDate>Tue, 26 May 2026 09:30:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/json/</guid>
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>https://artemis-ignis.github.io/tags/sql/</link>
       <pubDate>Tue, 26 May 2026 09:30:00 +0900</pubDate>
       <guid>https://artemis-ignis.github.io/tags/sql/</guid>
       <description></description>
     </item>
     <item>
-      <title>데이터베이스</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
-      <pubDate>Tue, 26 May 2026 09:30:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>백엔드</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%B0%B1%EC%97%94%EB%93%9C/</link>
+      <title>Backend</title>
+      <link>https://artemis-ignis.github.io/tags/backend/</link>
       <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%B0%B1%EC%97%94%EB%93%9C/</guid>
+      <guid>https://artemis-ignis.github.io/tags/backend/</guid>
       <description></description>
     </item>
     <item>
-      <title>서버</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B2%84/</link>
+      <title>Client</title>
+      <link>https://artemis-ignis.github.io/tags/client/</link>
       <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B2%84/</guid>
+      <guid>https://artemis-ignis.github.io/tags/client/</guid>
       <description></description>
     </item>
     <item>
-      <title>서비스 기획</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B8%B0%ED%9A%8D/</link>
+      <title>Server</title>
+      <link>https://artemis-ignis.github.io/tags/server/</link>
       <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B8%B0%ED%9A%8D/</guid>
+      <guid>https://artemis-ignis.github.io/tags/server/</guid>
       <description></description>
     </item>
     <item>
-      <title>웹서비스</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</link>
+      <title>Service-Planning</title>
+      <link>https://artemis-ignis.github.io/tags/service-planning/</link>
       <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</guid>
+      <guid>https://artemis-ignis.github.io/tags/service-planning/</guid>
       <description></description>
     </item>
     <item>
-      <title>클라이언트</title>
-      <link>https://artemis-ignis.github.io/tags/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8/</link>
+      <title>Web-Service</title>
+      <link>https://artemis-ignis.github.io/tags/web-service/</link>
       <pubDate>Tue, 26 May 2026 09:20:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8/</guid>
+      <guid>https://artemis-ignis.github.io/tags/web-service/</guid>
       <description></description>
     </item>
     <item>
-      <title>IT 리터러시</title>
-      <link>https://artemis-ignis.github.io/tags/it-%EB%A6%AC%ED%84%B0%EB%9F%AC%EC%8B%9C/</link>
+      <title>Computer-Basics</title>
+      <link>https://artemis-ignis.github.io/tags/computer-basics/</link>
       <pubDate>Tue, 26 May 2026 09:10:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/it-%EB%A6%AC%ED%84%B0%EB%9F%AC%EC%8B%9C/</guid>
+      <guid>https://artemis-ignis.github.io/tags/computer-basics/</guid>
       <description></description>
     </item>
     <item>
-      <title>리눅스</title>
-      <link>https://artemis-ignis.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</link>
+      <title>It-Literacy</title>
+      <link>https://artemis-ignis.github.io/tags/it-literacy/</link>
       <pubDate>Tue, 26 May 2026 09:10:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</guid>
+      <guid>https://artemis-ignis.github.io/tags/it-literacy/</guid>
       <description></description>
     </item>
     <item>
-      <title>컴퓨터의 이해</title>
-      <link>https://artemis-ignis.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%98-%EC%9D%B4%ED%95%B4/</link>
+      <title>Linux</title>
+      <link>https://artemis-ignis.github.io/tags/linux/</link>
       <pubDate>Tue, 26 May 2026 09:10:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%98-%EC%9D%B4%ED%95%B4/</guid>
+      <guid>https://artemis-ignis.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>프로그래밍 언어</title>
-      <link>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4/</link>
+      <title>Programming-Language</title>
+      <link>https://artemis-ignis.github.io/tags/programming-language/</link>
       <pubDate>Tue, 26 May 2026 09:10:00 +0900</pubDate>
-      <guid>https://artemis-ignis.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%96%B8%EC%96%B4/</guid>
+      <guid>https://artemis-ignis.github.io/tags/programming-language/</guid>
       <description></description>
     </item>
   </channel>
