@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="네트워크 개요, 인터넷과 HTTP, 주요 프로토콜, 보안 개념을 웹서비스 관점에서 정리했다.">
+    <title>2026-05-28 이어드림스쿨 강의자료 정리: 네트워크, HTTP, 프로토콜, 보안 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-28">2026.05.28</time>
+      <h1>2026-05-28 이어드림스쿨 강의자료 정리: 네트워크, HTTP, 프로토콜, 보안</h1>
+    </header>
+    <div class="article-body">
+      <p>이 글은 <code>2026-05-28</code> 네트워크 강의자료를 기준으로 정리한 학습 기록이다. 웹서비스가 클라이언트와 서버의 요청/응답 구조라면, 네트워크는 그 요청과 응답이 이동하는 길이다.</p>
+<h2 id="강의자료-순서">강의자료 순서</h2>
+<table>
+  <thead>
+      <tr>
+          <th>순서</th>
+          <th>강의자료</th>
+          <th>핵심 주제</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>네트워크 개요</td>
+          <td>네트워크, IP 주소, 통신 방식, OSI 7계층</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>인터넷과 HTTP</td>
+          <td>TCP/IP, HTTP, 상태 코드, CORS</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>주요 프로토콜</td>
+          <td>IP, DNS, DHCP, TCP/UDP, FTP, SMTP, SSH, SSL/TLS</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>보안</td>
+          <td>해시, 쿠키, 세션, 토큰, JWT, 캐시</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="네트워크는-컴퓨터끼리-대화하는-길이다">네트워크는 컴퓨터끼리 대화하는 길이다</h2>
+<p>네트워크는 여러 컴퓨터가 서로 데이터를 주고받을 수 있게 연결된 구조다. 우리가 웹사이트 주소를 입력하면 내 브라우저는 서버를 찾아가고, 서버는 HTML, CSS, 이미지, JSON 같은 데이터를 다시 보내준다.</p>
+<p>이때 IP 주소는 집 주소에 가깝다. DNS는 사람이 읽기 쉬운 도메인 이름을 실제 IP 주소로 바꿔주는 전화번호부 같은 역할을 한다.</p>
+<h2 id="http는-웹의-대화-규칙이다">HTTP는 웹의 대화 규칙이다</h2>
+<p>HTTP는 웹에서 클라이언트와 서버가 대화하는 규칙이다. 브라우저가 서버에 요청을 보내고, 서버는 상태 코드와 함께 응답을 돌려준다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>상태 코드</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>200</td>
+          <td>요청 성공</td>
+      </tr>
+      <tr>
+          <td>301/302</td>
+          <td>다른 주소로 이동</td>
+      </tr>
+      <tr>
+          <td>400</td>
+          <td>잘못된 요청</td>
+      </tr>
+      <tr>
+          <td>401</td>
+          <td>인증 필요</td>
+      </tr>
+      <tr>
+          <td>403</td>
+          <td>권한 없음</td>
+      </tr>
+      <tr>
+          <td>404</td>
+          <td>찾을 수 없음</td>
+      </tr>
+      <tr>
+          <td>500</td>
+          <td>서버 내부 오류</td>
+      </tr>
+      <tr>
+          <td>503</td>
+          <td>서버가 일시적으로 처리 불가</td>
+      </tr>
+  </tbody>
+</table>
+<p>개발할 때 404는 주소나 라우팅 문제를 의심하고, 500은 서버 코드나 설정 문제를 의심한다. 상태 코드를 읽을 수 있으면 오류 상황을 더 빠르게 좁힐 수 있다.</p>
+<h2 id="주요-프로토콜">주요 프로토콜</h2>
+<p>프로토콜은 통신 약속이다. 같은 언어와 규칙을 써야 서로 이해할 수 있다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>프로토콜</th>
+          <th>역할</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IP</td>
+          <td>목적지 주소를 기준으로 패킷 전달</td>
+      </tr>
+      <tr>
+          <td>DNS</td>
+          <td>도메인을 IP 주소로 변환</td>
+      </tr>
+      <tr>
+          <td>DHCP</td>
+          <td>네트워크에 접속한 기기에 IP 자동 할당</td>
+      </tr>
+      <tr>
+          <td>TCP</td>
+          <td>신뢰성 있는 연결 중심 통신</td>
+      </tr>
+      <tr>
+          <td>UDP</td>
+          <td>빠른 전송이 중요한 통신</td>
+      </tr>
+      <tr>
+          <td>FTP</td>
+          <td>파일 전송</td>
+      </tr>
+      <tr>
+          <td>SMTP</td>
+          <td>이메일 전송</td>
+      </tr>
+      <tr>
+          <td>SSH</td>
+          <td>원격 서버 접속</td>
+      </tr>
+      <tr>
+          <td>SSL/TLS</td>
+          <td>암호화된 안전한 통신</td>
+      </tr>
+  </tbody>
+</table>
+<p>웹사이트 주소가 <code>https://</code>로 시작하면 SSL/TLS로 암호화된 통신을 사용한다. 로그인, 결제, 개인정보 입력 페이지에서 HTTPS가 중요한 이유다.</p>
+<h2 id="쿠키-세션-토큰-jwt">쿠키, 세션, 토큰, JWT</h2>
+<p>HTTP는 기본적으로 이전 요청을 기억하지 않는다. 그래서 로그인 상태 같은 정보를 유지하려면 별도의 방법이 필요하다.</p>
+<p>쿠키는 브라우저에 저장되는 작은 정보다. 세션은 서버가 로그인 상태를 기억하는 방식이다. 토큰은 클라이언트가 인증 정보를 들고 다니는 방식이고, JWT는 토큰 안에 정보를 담는 형식 중 하나다.</p>
+<p>보안에서 중요한 것은 &ldquo;누구인지 확인하는 것&quot;과 &ldquo;무엇을 할 권한이 있는지 확인하는 것&quot;을 분리해서 생각하는 것이다. 로그인은 인증이고, 관리자 페이지 접근 가능 여부는 권한 검사다.</p>
+<h2 id="캐시와-cors">캐시와 CORS</h2>
+<p>캐시는 자주 쓰는 데이터를 임시로 저장해 빠르게 보여주는 방법이다. 이미지를 매번 새로 받지 않고 저장해두면 사이트가 빨라진다. 다만 오래된 데이터가 남을 수 있으므로 언제 새로 받을지 규칙이 필요하다.</p>
+<p>CORS는 다른 출처의 리소스 요청을 제어하는 브라우저 보안 정책이다. 프론트엔드와 백엔드 주소가 다를 때 CORS 오류를 자주 만난다. 이때 서버가 어떤 출처를 허용할지 정확히 설정해야 한다.</p>
+<h2 id="오늘의-정리">오늘의 정리</h2>
+<p>네트워크 수업은 웹서비스의 보이지 않는 도로망을 이해하는 시간이었다. API 요청 하나도 IP, DNS, HTTP, 상태 코드, 보안 정책을 거쳐 움직인다. 개발자는 화면만 보는 것이 아니라 요청이 어디로 가고, 어떤 규칙으로 응답이 오는지 읽을 수 있어야 한다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>
