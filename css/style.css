@@ -131,8 +131,22 @@ p {
   max-width: 760px;
 }
 
+.article-header h1 {
+  max-width: 100%;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
+  word-break: keep-all;
+}
+
 .article-body {
+  color: #344054;
   font-size: 18px;
+}
+
+.article-body h2,
+.article-body h3,
+.article-body strong {
+  color: var(--text);
 }
 
 .article-body img {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="파이썬의 출력, 변수, 자료형, 연산, 문자열 접근을 정리했다.">
+    <meta name="description" content="파이썬의 변수, 숫자, 문자열, 불리언, 형변환 같은 기초 자료형을 정리했다.">
     <title>2026-05-29 강의자료 01: 기초 자료형 - Python으로의 초대 | Artemis Ignis Blog</title>
     
   <script>
@@ -48,46 +48,51 @@
       <h1>2026-05-29 강의자료 01: 기초 자료형 - Python으로의 초대</h1>
     </header>
     <div class="article-body">
-      <p>이 자료는 파이썬 문법의 출발점이다. 코드를 처음 배울 때 가장 먼저 익혀야 할 것은 값을 출력하고, 변수에 저장하고, 자료형을 구분하는 일이다.</p>
-<h2 id="출력과-변수">출력과 변수</h2>
-<p><code>print()</code>는 값을 화면에 보여주는 함수다. 변수는 값을 담는 이름표다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;사용자 A&#34;</span>
-</span></span><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(name)
-</span></span><span style="display:flex;"><span>print(age)
-</span></span></code></pre></div><p>변수 이름은 의미 있게 짓는 것이 좋다. <code>x</code>보다 <code>user_name</code>, <code>total_price</code>처럼 읽히는 이름이 나중에 코드를 이해하기 쉽다.</p>
-<h2 id="자료형">자료형</h2>
-<p>자료형은 값의 종류다. 정수, 실수, 문자열, 참/거짓 같은 값은 서로 다른 방식으로 다뤄진다.</p>
+      <p><img src="/images/lecture/python-basics-study-map.png" alt="파이썬 기초 문법을 정리한 학습 이미지"></p>
+<p>이 글은 <code>[강의자료] 기초 자료형 _ Python으로의 초대.pdf</code>를 보고 다시 정리한 복습 기록이다. 슬라이드를 그대로 옮기기보다는, 나중에 봤을 때 &ldquo;아, 이게 그 말이었지&rdquo; 하고 떠올릴 수 있게 쉬운 말과 예시 중심으로 적었다.</p>
+<h2 id="한-줄-요약">한 줄 요약</h2>
+<p>자료형은 값의 종류를 나타내며, 파이썬은 숫자, 문자열, 참거짓 같은 값을 상황에 맞게 다룬다.</p>
+<h2 id="수업-흐름">수업 흐름</h2>
+<p>파이썬을 처음 배울 때는 변수와 자료형부터 잡는 것이 좋다. 변수는 값을 담는 이름표이고, 자료형은 그 값이 어떤 종류인지 알려 준다. <code>10</code>은 숫자, <code>&quot;10&quot;</code>은 문자열이다. 겉으로 비슷해 보여도 계산할 수 있는지, 이어 붙일 수 있는지가 달라진다.</p>
+<h2 id="쉽게-이해하기">쉽게 이해하기</h2>
+<p>변수는 물건에 붙이는 라벨과 비슷하다. 같은 상자에 사과를 담을 수도 있고 책을 담을 수도 있지만, 안에 무엇이 들어 있는지에 따라 할 수 있는 행동이 다르다. 숫자는 더하고 뺄 수 있고, 문자열은 글자로 이어 붙일 수 있다.</p>
+<h2 id="헷갈렸던-단어">헷갈렸던 단어</h2>
 <table>
   <thead>
       <tr>
-          <th>자료형</th>
-          <th>예시</th>
+          <th>용어</th>
+          <th>내가 이해한 뜻</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>int</td>
-          <td><code>10</code></td>
+          <td>변수</td>
+          <td>값을 다시 사용하기 위해 붙이는 이름</td>
       </tr>
       <tr>
-          <td>float</td>
-          <td><code>3.14</code></td>
+          <td>정수</td>
+          <td>소수점이 없는 숫자</td>
       </tr>
       <tr>
-          <td>str</td>
-          <td><code>&quot;hello&quot;</code></td>
+          <td>문자열</td>
+          <td>글자 데이터를 표현하는 자료형</td>
       </tr>
       <tr>
-          <td>bool</td>
-          <td><code>True</code></td>
+          <td>불리언</td>
+          <td>참 또는 거짓을 나타내는 자료형</td>
       </tr>
   </tbody>
 </table>
-<p>숫자 <code>10</code>과 문자열 <code>&quot;10&quot;</code>은 다르다. 계산을 하려면 숫자 자료형이어야 한다.</p>
-<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
-<p>파이썬 기초는 변수와 자료형에서 시작한다. 값을 어떤 이름으로 저장하고, 그 값이 어떤 종류인지 이해하면 이후 조건문과 리스트도 훨씬 쉽게 이어진다.</p>
+<h2 id="짧은-예시">짧은 예시</h2>
+<p>예를 들어 <code>age = 20</code>은 나이를 숫자로 저장한 것이다. <code>name = &quot;사용자 A&quot;</code>는 이름을 문자열로 저장한 것이다. <code>is_member = True</code>처럼 참거짓을 저장하면 조건문에서 사용할 수 있다.</p>
+<h2 id="복습-체크">복습 체크</h2>
+<ul>
+<li>숫자 10과 문자열 &ldquo;10&quot;의 차이를 설명할 수 있는가?</li>
+<li>변수를 왜 쓰는지 말할 수 있는가?</li>
+<li>간단한 값을 보고 자료형을 추측할 수 있는가?</li>
+</ul>
+<h2 id="오늘의-정리">오늘의 정리</h2>
+<p>파이썬 문법은 어려운 수식보다 값을 어떻게 다루는지에서 시작한다. 자료형을 제대로 구분하면 나중에 조건문, 반복문, 데이터 분석 코드도 덜 헷갈린다.</p>
 
     </div>
   </article>

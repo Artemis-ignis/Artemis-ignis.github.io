@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="여러 값을 저장하는 리스트와 인덱스, 반복 활용 방식을 정리했다.">
+    <meta name="description" content="파이썬 리스트의 생성, 인덱스, 반복, 추가와 삭제 같은 기본 사용법을 정리했다.">
     <title>2026-05-29 강의자료 03: 리스트 - 모아모아 다모아 | Artemis Ignis Blog</title>
     
   <script>
@@ -48,26 +48,51 @@
       <h1>2026-05-29 강의자료 03: 리스트 - 모아모아 다모아</h1>
     </header>
     <div class="article-body">
-      <p>리스트는 여러 값을 하나로 묶어 저장하는 자료형이다. 학생 이름, 점수 목록, 상품 목록처럼 비슷한 성격의 값을 함께 다룰 때 유용하다.</p>
-<h2 id="리스트-만들기">리스트 만들기</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> [<span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">70</span>]
-</span></span><span style="display:flex;"><span>names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;사용자 A&#34;</span>, <span style="color:#e6db74">&#34;사용자 B&#34;</span>, <span style="color:#e6db74">&#34;사용자 C&#34;</span>]
-</span></span></code></pre></div><p>리스트는 대괄호를 사용하고, 값들은 쉼표로 구분한다.</p>
-<h2 id="인덱스">인덱스</h2>
-<p>리스트의 위치 번호를 인덱스라고 한다. 파이썬에서 첫 번째 위치는 1이 아니라 0이다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> [<span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">70</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(scores[<span style="color:#ae81ff">0</span>])
-</span></span><span style="display:flex;"><span>print(scores[<span style="color:#ae81ff">1</span>])
-</span></span></code></pre></div><p><code>scores[0]</code>은 첫 번째 값인 <code>90</code>을 의미한다.</p>
-<h2 id="반복과-활용">반복과 활용</h2>
-<p>리스트는 반복문과 함께 쓰면 더 강력하다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>names <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;사용자 A&#34;</span>, <span style="color:#e6db74">&#34;사용자 B&#34;</span>, <span style="color:#e6db74">&#34;사용자 C&#34;</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> name <span style="color:#f92672">in</span> names:
-</span></span><span style="display:flex;"><span>    print(name)
-</span></span></code></pre></div><h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
-<p>리스트는 데이터를 여러 개 다루기 위한 기본 도구다. 데이터 분석에서도 표의 열이나 행을 다룰 때 여러 값을 묶어 처리하는 사고가 필요하다.</p>
+      <p><img src="/images/lecture/python-basics-study-map.png" alt="파이썬 기초 문법을 정리한 학습 이미지"></p>
+<p>이 글은 <code>[강의자료] 리스트 _ 모아모아 다모아.pdf</code>를 보고 다시 정리한 복습 기록이다. 슬라이드를 그대로 옮기기보다는, 나중에 봤을 때 &ldquo;아, 이게 그 말이었지&rdquo; 하고 떠올릴 수 있게 쉬운 말과 예시 중심으로 적었다.</p>
+<h2 id="한-줄-요약">한 줄 요약</h2>
+<p>리스트는 여러 값을 순서대로 묶어 저장하는 파이썬의 기본 자료형이다.</p>
+<h2 id="수업-흐름">수업 흐름</h2>
+<p>데이터를 하나씩 변수로 만들면 금방 복잡해진다. 학생 이름, 점수 목록, 상품 목록처럼 여러 값을 함께 다룰 때 리스트를 쓴다. 리스트는 대괄호로 만들고, 각 값은 쉼표로 구분한다. 위치 번호인 인덱스는 0부터 시작한다는 점이 처음에는 가장 헷갈린다.</p>
+<h2 id="쉽게-이해하기">쉽게 이해하기</h2>
+<p>리스트는 줄 서 있는 사람들처럼 생각하면 된다. 첫 번째 사람을 현실에서는 1번이라고 부르지만, 파이썬은 0번부터 센다. 그래서 <code>scores[0]</code>은 첫 번째 점수다. 순서가 있기 때문에 앞에서부터 반복하거나 특정 위치의 값을 꺼낼 수 있다.</p>
+<h2 id="헷갈렸던-단어">헷갈렸던 단어</h2>
+<table>
+  <thead>
+      <tr>
+          <th>용어</th>
+          <th>내가 이해한 뜻</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>리스트</td>
+          <td>여러 값을 순서대로 담는 자료형</td>
+      </tr>
+      <tr>
+          <td>인덱스</td>
+          <td>리스트 안에서 값의 위치를 나타내는 번호</td>
+      </tr>
+      <tr>
+          <td>슬라이싱</td>
+          <td>리스트의 일부 구간을 잘라 가져오는 방법</td>
+      </tr>
+      <tr>
+          <td>반복문</td>
+          <td>리스트의 값을 하나씩 꺼내며 같은 작업을 반복하는 문법</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="짧은-예시">짧은 예시</h2>
+<p><code>scores = [90, 80, 70]</code>이 있을 때 <code>scores[0]</code>은 90이다. <code>for score in scores:</code>처럼 반복하면 점수를 하나씩 꺼내 평균 계산이나 조건 검사를 할 수 있다.</p>
+<h2 id="복습-체크">복습 체크</h2>
+<ul>
+<li>리스트 인덱스가 0부터 시작한다는 점을 기억하는가?</li>
+<li>여러 값을 각각 변수로 만들 때보다 리스트가 편한 이유를 설명할 수 있는가?</li>
+<li>반복문으로 리스트 값을 하나씩 꺼내는 흐름을 이해했는가?</li>
+</ul>
+<h2 id="오늘의-정리">오늘의 정리</h2>
+<p>리스트는 파이썬에서 정말 자주 쓰는 기본 도구다. 데이터 분석에서도 한 줄, 한 행, 한 목록을 다룰 때 리스트 감각이 계속 필요하니 인덱스와 반복부터 익숙해져야겠다.</p>
 
     </div>
   </article>
