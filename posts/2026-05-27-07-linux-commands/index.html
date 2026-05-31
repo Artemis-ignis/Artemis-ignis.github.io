@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="리눅스 CLI 명령어와 문자열 검색, 정규표현식의 기본 감각을 정리했다.">
+    <title>2026-05-27 강의자료 07: 알고 쓰는 리눅스 명령어 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-27">2026.05.27</time>
+      <h1>2026-05-27 강의자료 07: 알고 쓰는 리눅스 명령어</h1>
+    </header>
+    <div class="article-body">
+      <p>리눅스 명령어는 단순히 외워야 하는 단어가 아니라 서버와 대화하는 방법이다. 명령어를 알면 파일을 찾고, 내용을 확인하고, 로그에서 필요한 줄을 빠르게 골라낼 수 있다.</p>
+<h2 id="기본-명령어">기본 명령어</h2>
+<table>
+  <thead>
+      <tr>
+          <th>명령어</th>
+          <th>의미</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>pwd</code></td>
+          <td>현재 위치 확인</td>
+      </tr>
+      <tr>
+          <td><code>ls</code></td>
+          <td>목록 보기</td>
+      </tr>
+      <tr>
+          <td><code>cd</code></td>
+          <td>디렉터리 이동</td>
+      </tr>
+      <tr>
+          <td><code>cp</code></td>
+          <td>복사</td>
+      </tr>
+      <tr>
+          <td><code>mv</code></td>
+          <td>이동 또는 이름 변경</td>
+      </tr>
+      <tr>
+          <td><code>rm</code></td>
+          <td>삭제</td>
+      </tr>
+      <tr>
+          <td><code>cat</code></td>
+          <td>파일 내용 보기</td>
+      </tr>
+      <tr>
+          <td><code>grep</code></td>
+          <td>문자열 검색</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="문자열-검색">문자열 검색</h2>
+<p>로그 파일이 길 때 처음부터 끝까지 읽는 것은 비효율적이다. <code>grep</code>을 쓰면 원하는 단어가 포함된 줄만 찾을 수 있다.</p>
+<p>정규표현식은 문자열 패턴을 표현하는 방법이다. 이메일 형식, 숫자 패턴, 특정 접두어를 가진 단어를 찾을 때 사용할 수 있다.</p>
+<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
+<p>CLI는 익숙해질수록 강력하다. 마우스로 반복하는 일을 명령어로 정리하면 나중에 스크립트로 자동화할 수 있다. 개발자는 명령어를 통해 서버 상태를 빠르게 읽을 수 있어야 한다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

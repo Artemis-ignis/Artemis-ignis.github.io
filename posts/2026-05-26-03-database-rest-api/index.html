@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="API, REST, JSON/XML, 데이터베이스, 쿼리, CRUD의 기본 흐름을 정리했다.">
+    <title>2026-05-26 강의자료 03: 데이터베이스와 REST API | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-26">2026.05.26</time>
+      <h1>2026-05-26 강의자료 03: 데이터베이스와 REST API</h1>
+    </header>
+    <div class="article-body">
+      <p>이 자료는 웹서비스가 데이터를 어떻게 주고받고 저장하는지 설명한다. 화면에서 버튼을 누르는 일은 단순해 보이지만, 뒤에서는 API 요청과 데이터베이스 처리가 이어진다.</p>
+<h2 id="api와-rest-api">API와 REST API</h2>
+<p>API는 프로그램끼리 데이터를 주고받기 위한 약속된 통로다. REST API는 웹에서 많이 쓰는 방식으로, 주소와 요청 방법을 조합해 작업을 표현한다.</p>
+<table>
+  <thead>
+      <tr>
+          <th>요청</th>
+          <th>의미</th>
+          <th>예시</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GET</td>
+          <td>조회</td>
+          <td>글 목록 가져오기</td>
+      </tr>
+      <tr>
+          <td>POST</td>
+          <td>생성</td>
+          <td>새 글 작성</td>
+      </tr>
+      <tr>
+          <td>PATCH</td>
+          <td>수정</td>
+          <td>글 내용 변경</td>
+      </tr>
+      <tr>
+          <td>DELETE</td>
+          <td>삭제</td>
+          <td>글 삭제</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="json과-xml">JSON과 XML</h2>
+<p>JSON과 XML은 데이터를 주고받는 형식이다. JSON은 간결해서 요즘 웹 API에서 자주 쓰이고, XML은 공공기관 API나 오래된 시스템에서 많이 볼 수 있다.</p>
+<p>공공데이터 API 문서를 읽을 때 XML 응답, serviceKey, 지역코드, 계약월 같은 필수 파라미터가 나오는 이유도 이 흐름과 연결된다.</p>
+<h2 id="데이터베이스와-crud">데이터베이스와 CRUD</h2>
+<p>데이터베이스는 서비스의 기억 공간이다. 회원, 주문, 게시글, 결제 내역 같은 데이터를 저장한다. 기본 동작은 CRUD로 정리한다.</p>
+<p>Create는 만들기, Read는 읽기, Update는 수정하기, Delete는 삭제하기다. SQL에서는 각각 INSERT, SELECT, UPDATE, DELETE와 연결된다.</p>
+<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
+<p>웹서비스의 핵심 흐름은 클라이언트 요청, 서버 처리, 데이터베이스 조회, 응답이다. API와 DB를 함께 이해해야 화면 뒤에서 무슨 일이 일어나는지 설명할 수 있다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

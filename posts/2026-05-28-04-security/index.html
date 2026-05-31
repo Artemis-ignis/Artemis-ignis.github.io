@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="해시, 쿠키, 세션, 토큰, JWT, 캐시를 웹 보안 관점에서 정리했다.">
+    <title>2026-05-28 강의자료 04: 보안 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-28">2026.05.28</time>
+      <h1>2026-05-28 강의자료 04: 보안</h1>
+    </header>
+    <div class="article-body">
+      <p>보안은 서비스를 만든 뒤 추가로 붙이는 장식이 아니다. 로그인, 개인정보, 권한, 데이터 저장을 다루는 순간부터 함께 생각해야 한다.</p>
+<h2 id="해시">해시</h2>
+<p>해시는 데이터를 일정한 규칙으로 바꾼 값이다. 비밀번호는 원문 그대로 저장하면 위험하기 때문에 보통 해시를 사용한다. 중요한 점은 원래 값을 쉽게 되돌릴 수 없게 관리해야 한다는 것이다.</p>
+<h2 id="쿠키와-세션">쿠키와 세션</h2>
+<p>HTTP는 기본적으로 이전 요청을 기억하지 않는다. 로그인 상태를 유지하려면 쿠키나 세션 같은 방법이 필요하다.</p>
+<p>쿠키는 브라우저에 저장되는 작은 정보이고, 세션은 서버가 사용자 상태를 기억하는 방식이다.</p>
+<h2 id="토큰과-jwt">토큰과 JWT</h2>
+<p>토큰은 인증 정보를 담아 요청마다 함께 보내는 방식이다. JWT는 토큰 형식 중 하나로, 필요한 정보를 구조화해서 담을 수 있다.</p>
+<p>인증은 &ldquo;누구인지 확인&quot;하는 것이고, 권한은 &ldquo;무엇을 할 수 있는지 확인&quot;하는 것이다. 둘을 구분해야 관리자 기능이나 개인정보 접근을 안전하게 설계할 수 있다.</p>
+<h2 id="캐시">캐시</h2>
+<p>캐시는 자주 쓰는 데이터를 임시 저장해 빠르게 보여주는 방법이다. 성능에는 좋지만 오래된 데이터나 민감한 정보가 잘못 남지 않도록 주의해야 한다.</p>
+<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
+<p>보안은 기능과 함께 설계해야 한다. 로그인, 권한, 개인정보, 캐시는 모두 서비스 신뢰도와 직접 연결된다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

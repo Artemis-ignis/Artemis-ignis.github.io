@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="파일과 디렉터리, 경로, 파일 시스템의 역할을 정리했다.">
+    <title>2026-05-27 강의자료 04: 파일 시스템 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-27">2026.05.27</time>
+      <h1>2026-05-27 강의자료 04: 파일 시스템</h1>
+    </header>
+    <div class="article-body">
+      <p>파일 시스템은 컴퓨터가 파일과 디렉터리를 정리하는 방식이다. 사용자는 폴더와 파일을 눈으로 보지만, 운영체제는 정해진 규칙에 따라 저장 위치와 이름을 관리한다.</p>
+<h2 id="파일과-디렉터리">파일과 디렉터리</h2>
+<p>파일은 데이터를 담는 단위이고, 디렉터리는 파일을 묶어두는 공간이다. 디렉터리 안에 또 다른 디렉터리가 들어갈 수 있어서 트리 구조가 만들어진다.</p>
+<p>경로는 파일의 위치를 나타낸다. 윈도우에서는 <code>C:\Users\...</code> 같은 형태를 많이 쓰고, 리눅스에서는 <code>/home/user/...</code> 같은 형태를 많이 쓴다.</p>
+<h2 id="개발에서-중요한-이유">개발에서 중요한 이유</h2>
+<p>개발할 때는 파일 위치가 자주 문제를 만든다. 실행 위치가 다르면 상대 경로가 달라지고, 파일 권한이 없으면 읽거나 쓸 수 없다.</p>
+<p>Hugo 블로그에서도 <code>content/posts</code>에 있는 마크다운 파일과 <code>public/posts</code>에 생성되는 HTML 파일은 역할이 다르다. 위치를 정확히 알아야 배포 흐름을 이해할 수 있다.</p>
+<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
+<p>파일 시스템은 개발자의 기본 지도다. 어디에 원본이 있고, 어디에 결과물이 생기며, 어떤 경로를 기준으로 명령이 실행되는지 확인하는 습관이 중요하다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>

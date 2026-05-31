@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="입력, 비교 연산, if 조건문, 들여쓰기의 중요성을 정리했다.">
+    <title>2026-05-29 강의자료 02: 조건문 - 진실 혹은 거짓 | Artemis Ignis Blog</title>
+    
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDHWPW9K');
+  </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFR3Q3BXKV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BFR3Q3BXKV');
+  </script>
+
+  </head>
+  <body>
+    
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDHWPW9K"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+    <header class="site-header">
+      <a class="brand" href="/">Artemis Ignis Blog</a>
+      <nav class="nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/posts/">글</a>
+      </nav>
+    </header>
+
+    <main>
+      
+  <article class="article">
+    <header class="article-header">
+      <time datetime="2026-05-29">2026.05.29</time>
+      <h1>2026-05-29 강의자료 02: 조건문 - 진실 혹은 거짓</h1>
+    </header>
+    <div class="article-body">
+      <p>조건문은 상황에 따라 다른 코드를 실행하게 해준다. 컴퓨터에게 &ldquo;이 조건이면 이렇게 하고, 아니면 저렇게 해&quot;라고 알려주는 문법이다.</p>
+<h2 id="입력받기">입력받기</h2>
+<p><code>input()</code>은 사용자에게 값을 입력받는다. 입력받은 값은 기본적으로 문자열이기 때문에 숫자 계산을 하려면 자료형을 바꿔야 한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;나이를 입력하세요: &#34;</span>))
+</span></span></code></pre></div><h2 id="if-조건문">if 조건문</h2>
+<p>조건문은 비교 결과가 참인지 거짓인지에 따라 실행 흐름을 나눈다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>score <span style="color:#f92672">=</span> <span style="color:#ae81ff">85</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> score <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">80</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;통과&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;다시 도전&#34;</span>)
+</span></span></code></pre></div><p>파이썬에서 들여쓰기는 문법이다. 들여쓰기가 틀리면 코드의 의미가 달라지거나 오류가 난다.</p>
+<h2 id="비교-연산">비교 연산</h2>
+<p><code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> 같은 비교 연산자는 조건을 만들 때 사용한다.</p>
+<h2 id="오늘-가져갈-것">오늘 가져갈 것</h2>
+<p>조건문을 배우면 프로그램이 한 방향으로만 흐르지 않고 상황에 맞게 판단할 수 있다. 로그인 성공/실패, 점수 판정, 권한 확인 같은 기능의 기본이 된다.</p>
+
+    </div>
+  </article>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Built with Hugo and GitHub Pages.</p>
+    </footer>
+  </body>
+</html>
