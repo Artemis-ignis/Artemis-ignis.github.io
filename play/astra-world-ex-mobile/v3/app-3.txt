@@ -1,0 +1,12 @@
+canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',e=>{pointers.delete(e.pointerId);drag=null;});canvas.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.1:.9;if(game.view==='sanctuary')city.zoomAt(f);else renderer.zoom(f);game.focus=false;},{passive:false});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if(e.key==='Tab'&&activePanel){let items=[...$('panel').querySelectorAll('button:not(:disabled),input,select')];if(!items.length)return;const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+let resizeTimer;new ResizeObserver(()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{city.resize();renderer.resize();renderer.key='';},50);}).observe($('stage'));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)game.save();last=performance.now();acc=0;});window.addEventListener('pagehide',()=>game.save());
+function frame(t){requestAnimationFrame(frame);if(document.hidden){last=t;return;}let dt=Math.min(.15,(t-last)/1000);last=t;if(!game.paused){acc+=dt*game.speed;let n=0;while(acc>=.05&&n++<12){game.tick(.05);acc-=.05;}}
+ if(game.view==='sanctuary'){const all=game.world.agents,away=new Set(game.mission?.units.map(u=>u.id)||[]);game.world.agents=all.filter(a=>!away.has(a.id));city.draw(game.time);game.world.agents=all;}else renderer.draw(game.time);
+ if(t-hudAt>220){hudAt=t;hud();if(game.events.length&&t>toastUntil-300){let ev=game.events.pop();game.events=[];toast(ev.text);}if(t>toastUntil)$('toast').classList.add('off');if(audio.on&&game.mission&&t-audio.last>1300){audio.last=t;audio.note([146.8,196,220,261.6][Math.floor(game.time)%4],.6,.012);}}
+ if(t-saveAt>12000){saveAt=t;game.save();}}
+window.__ASTRA_V3__={get game(){return game},get renderer(){return renderer},get city(){return city},tick(seconds){const p=game.paused;game.paused=false;for(let i=0;i<Math.round(seconds*20);i++)game.tick(.05);game.paused=p;hud();},open,close,hero:heroView,newGame(seed){close();bindGame(new Campaign(seed));},reload(){const g=Campaign.load();if(g)bindGame(g);return !!g;},draw(){renderer.draw(game.time);},version:'0.3.0'};
+window.addEventListener('error',e=>{console.error('Astra v3:',e.message);toast('실행 오류: '+String(e.message).slice(0,80));});
+buildParty();renderer.selected=selected;hud();requestAnimationFrame(frame);setTimeout(()=>$('intro-pill').hidden=true,11000);
+})();
