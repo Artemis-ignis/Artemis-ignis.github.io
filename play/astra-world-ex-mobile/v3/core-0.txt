@@ -1,0 +1,62 @@
+/* Astra World EX • explicit world locations, deterministic expedition combat.
+   New saves live under astra_world_ex_expedition_v3. No remote services/AI. */
+(()=>{'use strict';
+const {Game,RNG,clamp,JOB}=AstraEngine;
+const SAVE='astra_world_ex_expedition_v3', BACK=SAVE+'_backup';
+const ROLE={
+ mage:{name:'천문 예언자',color:'#b9a3ea',hair:'#e3e0f6',atk:13,hp:145,def:2,range:4.8,interval:1.5,skill:'별의 파동',paths:['성운 대마도사','별빛 구원자'],skills:['성운 폭발','별의 소생']},
+ knight:{name:'월광 성기사',color:'#8cbedf',hair:'#e9e2c7',atk:12,hp:245,def:6,range:1.3,interval:1.35,skill:'월광 방벽',paths:['서약의 수호자','심판의 기사'],skills:['불굴의 방벽','신성 심판']},
+ ranger:{name:'뿔 사냥꾼',color:'#91c88c',hair:'#a06946',atk:18,hp:150,def:2,range:5.2,interval:1.45,skill:'연속 사격',paths:['바람 추적자','황혼 저격수'],skills:['질풍 연사','관통 저격']},
+ warrior:{name:'홍련 광검사',color:'#e78283',hair:'#3c3348',atk:21,hp:200,def:3,range:1.6,interval:1.6,skill:'홍련 휩쓸기',paths:['홍련 검성','불멸의 광전사'],skills:['홍련 참격','혈기의 폭발']},
+ lancer:{name:'성창 기사',color:'#93e2e9',hair:'#c0d6ee',atk:16,hp:200,def:4,range:2.1,interval:1.25,skill:'성창 돌진',paths:['천상의 창성','용기사'],skills:['별빛 관통','비룡 강습']}}
+const ENEMY={
+ slime:{name:'월광 슬라임',hp:64,atk:5,def:0,speed:1,range:1,rate:2.1},wolf:{name:'잿빛 늑대',hp:90,atk:8,def:1,speed:2,range:1.2,rate:1.45},
+ goblin:{name:'고블린 약탈자',hp:115,atk:10,def:2,speed:1.6,range:1.4,rate:1.8},archer:{name:'고블린 궁수',hp:85,atk:10,def:1,speed:1.3,range:4.4,rate:2.3},
+ skeleton:{name:'망각의 검병',hp:135,atk:13,def:3,speed:1.4,range:1.5,rate:1.8},wraith:{name:'회랑의 망령',hp:110,atk:14,def:1,speed:1.3,range:4,rate:2.2},
+ golem:{name:'월석 수문장',hp:480,atk:19,def:5,speed:.85,range:2,rate:2.5},dragon:{name:'붉은 별의 비룡',hp:600,atk:21,def:4,speed:1.05,range:3.5,rate:2.4}}
+const ZONES={sanctuary:{name:'공중섬 성역',sub:'생활 · 제작 · 회복',tag:'HOME'},forest:{name:'검은숲 경계',sub:'야외 원정 · 4개 구역',tag:'FIELD'},dungeon:{name:'월석 던전',sub:'10개 층 · 연결된 탐색실',tag:'DUNGEON'},tower:{name:'성좌의 탑',sub:'100개 층 · 5층마다 보스',tag:'TOWER'}};
+const distance=(a,b)=>Math.hypot(a.u-b.u,a.v-b.v), key=(u,v)=>u+','+v;
+class BattleMap{
+ constructor(zone,floor=1){this.zone=zone;this.floor=floor;this.tiles=new Map();this.rng=new RNG(1997+floor*187+zone.length*99);this.rooms=[];this.build();}
+ build(){
+  let layouts=this.zone==='tower'?[[4,4,8,7],[16,4,9,8],[17,17,9,8],[4,17,8,8]]:[[3,3,10,8],[18,4,10,8],[19,19,11,9],[3,19,11,9]];
+  if(this.floor%3===2)layouts=layouts.map(([x,y,w,h])=>[y,x,h,w]);if(this.floor%3===0)layouts=layouts.map(([x,y,w,h])=>[x+(y<14?1:0),y,w+(x<14?1:0),h]);
+  layouts.forEach(([x,y,w,h],i)=>{const room={id:i,x,y,w,h,u:x+w/2,v:y+h/2};this.rooms.push(room);for(let u=x;u<x+w;u++)for(let v=y;v<y+h;v++)this.tiles.set(key(u,v),{u,v,room:i,n:this.rng.next(),kind:'floor'});});
+  for(let i=0;i<3;i++){let a=this.rooms[i],b=this.rooms[i+1],u=Math.floor(a.u),v=Math.floor(a.v);const eu=Math.floor(b.u),ev=Math.floor(b.v);const pave=()=>{for(let du=-1;du<=1;du++)for(let dv=-1;dv<=1;dv++){let k=key(u+du,v+dv);if(!this.tiles.has(k))this.tiles.set(k,{u:u+du,v:v+dv,room:-1,n:this.rng.next(),kind:'bridge'});}};while(u!==eu){u+=Math.sign(eu-u);pave();}while(v!==ev){v+=Math.sign(ev-v);pave();}}
+  this.start={u:this.rooms[0].u-2,v:this.rooms[0].v+1};this.bounds={w:34,h:32};
+ }
+ tile(u,v){return this.tiles.get(key(Math.round(u),Math.round(v)));}
+ walk(u,v){return this.tiles.has(key(Math.round(u),Math.round(v)));}
+ nearest(u,v){for(let r=0;r<20;r++)for(let a=-r;a<=r;a++)for(let b=-r;b<=r;b++)if(this.walk(u+a,v+b))return{u:Math.round(u+a),v:Math.round(v+b)};return {...this.start};}
+ los(a,b){const d=distance(a,b),steps=Math.ceil(d*3);for(let i=1;i<steps;i++)if(!this.walk(a.u+(b.u-a.u)*i/steps,a.v+(b.v-a.v)*i/steps))return false;return true;}
+ path(a,b){const p=this.nearest(b.u,b.v),s=this.nearest(a.u,a.v),end=key(p.u,p.v),start=key(s.u,s.v);if(end===start)return[];let open=[{...s,g:0,f:0}],cost=new Map([[start,0]]),prev=new Map(),closed=new Set(),iter=0;
+ while(open.length&&iter++<1800){let bi=0;for(let i=1;i<open.length;i++)if(open[i].f<open[bi].f)bi=i;let n=open.splice(bi,1)[0],k=key(n.u,n.v);if(closed.has(k))continue;if(k===end){let out=[];while(k!==start){let [u,v]=k.split(',').map(Number);out.unshift({u,v});k=prev.get(k);if(!k)return[];}return out;}closed.add(k);for(const[du,dv]of[[1,0],[-1,0],[0,1],[0,-1]]){let u=n.u+du,v=n.v+dv,q=key(u,v);if(!this.walk(u,v)||closed.has(q))continue;let g=n.g+1;if(g<(cost.get(q)??1e9)){cost.set(q,g);prev.set(q,k);open.push({u,v,g,f:g+Math.abs(p.u-u)+Math.abs(p.v-v)});}}}return[];
+ }
+}
+class Campaign{
+ constructor(seed=9062026){this.rng=new RNG(seed);this.world=new Game(seed);this.world.started=true;this.world.settings.tutorialSeen=true;this.world.resources.gold=380;this.world.resources.faith=180;this.world.resources.lore=15;this.world.time=10;this.view='forest';this.time=0;this.speed=1;this.paused=false;this.focus=true;this.auto=true;this.inventory=[];this.crystals=20;this.potions=8;this.progress={dungeon:1,tower:1,clears:0,kills:0,bosses:0};this.history=[];this.events=[];this.results=[];this.codex={};this.nextId=1000;this.cooldowns={};this.mission=null;this.pending=null;this.scenario=null;this.autoTimer=0;this.maps={};this.fx=[];this.damageEvents=0;this.projectileCount=0;this.sessionKills=0;this.preferences={sound:false,quiet:false};this.marks={};
+ this.heroes=this.world.agents.filter(a=>a.hero);this.heroes.forEach((a,i)=>{a.level=1;a.xp=0;a.promote=0;a.branch=0;a.sp=0;a.skillLv=1;a.equip={weapon:null,armor:null,charm:null};a.contract=true;a.gender='f';a.hair=ROLE[a.role].hair;a.color=ROLE[a.role].color;a.injuries=0;a.kills=0;a.maxHp=this.stats(a).hp;a.hp=a.maxHp;});
+ this.world.gainXP=(a,x)=>this.gain(a,x*.5);this.invite('forest',1,true);this.log('성좌의 관측 시작'+' · 다섯 영웅이 검은숲의 마물과 조우했습니다.');
+ }
+ get agents(){return this.world.agents;}
+ hero(id){return this.agents.find(a=>a.id===+id);}
+ notice(text){this.events.push({text});if(this.events.length>20)this.events.shift();}
+ log(text){this.history.unshift({t:Math.floor(this.time),text});if(this.history.length>120)this.history.pop();}
+ stats(a){const r=ROLE[a.role]||ROLE.ranger,l=Math.max(1,a.level),eq=Object.values(a.equip||{}).filter(Boolean);let st={hp:Math.round(r.hp+(l-1)*19+(a.promote||0)*75+eq.reduce((s,e)=>s+(e.hp||0),0)),atk:Math.round(r.atk+(l-1)*3.2+(a.promote||0)*11+eq.reduce((s,e)=>s+(e.atk||0),0)),def:Math.round(r.def+(l-1)*.8+(a.promote||0)*3+eq.reduce((s,e)=>s+(e.def||0),0)),range:r.range,rate:r.interval,speed:2.3+(a.role==='ranger'?.2:0)};
+ if(a.promote){const b=a.branch===1;if(a.role==='mage'){if(b)st.hp*=1.2;else st.atk*=1.3;}if(a.role==='knight'){if(b)st.atk*=1.45;else{st.hp*=1.3;st.def*=1.3;}}if(a.role==='ranger'){if(b){st.atk*=1.35;st.range+=1.5;}else st.rate*=.72;}if(a.role==='warrior'){if(b)st.hp*=1.3;else st.atk*=1.25;}if(a.role==='lancer'){if(b)st.hp*=1.25;else{st.atk*=1.2;st.range+=.6;}}}for(const k of ['hp','atk','def'])st[k]=Math.round(st[k]);return st;}
+ needXP(a){return Math.round(35+a.level*19+a.level*a.level*1.6);}
+ gain(a,n){if(!a.hero){a.xp=(a.xp||0)+n;return;}if(!ROLE[a.role])return;let levels=0;a.xp+=n;while(a.xp>=this.needXP(a)&&a.level<60){a.xp-=this.needXP(a);a.level++;a.sp=(a.sp||0)+1;levels++;let s=this.stats(a);a.maxHp=s.hp;a.hp=Math.min(a.maxHp,a.hp+40);}
+ if(levels){this.notice(`${a.name} ${a.level}레벨! 능력치 상승 · 기술점수 +${levels}`);this.log(`${a.name}가 ${a.level}레벨이 되었습니다.`);const b=this.mission?.units.find(u=>u.id===a.id);if(b){this.fx.push({type:'ring',u:b.u,v:b.v,color:'#f4d898',age:0,life:1.5});this.text(b,'레벨 '+a.level,'#ffe295');}if(a.level>=5&&!a.promote)this.notice(`${a.name}의 전직이 열렸습니다. 아래 「영웅」에서 확인하세요.`);}}
+ name(a){return a.promote?ROLE[a.role].paths[a.branch]+(a.promote>1?' · 각성':''):ROLE[a.role]?.name||JOB[a.role];}
+ map(zone,floor=1){const k=zone+floor;return this.maps[k]||(this.maps[k]=new BattleMap(zone,floor));}
+ observe(zone){if(!ZONES[zone])return;this.view=zone;this.focus=true;this.notice(zone==='sanctuary'?'성역을 관측합니다. 원정과 주민 생활은 계속 진행됩니다.':`${ZONES[zone].name} 관측 · ${this.mission?.zone===zone?'영웅들의 실제 전투':'원정 신탁으로 영웅을 초대할 수 있습니다.'}`);}
+ invite(zone,floor=1,initial=false){if(!['forest','dungeon','tower'].includes(zone))return false;floor=Math.floor(clamp(+floor||1,1,zone==='dungeon'?10:zone==='tower'?100:1));if(!initial&&zone!=='forest'&&floor>this.progress[zone]){this.notice('앞선 층을 돌파해야 이 층에 진입할 수 있습니다.');return false;}
+ if(this.mission){this.pending={zone,floor};this.mission.retreat=true;this.mission.retreatTime=4;this.notice('새 원정 신탁을 전달했습니다. 영웅들이 안전 귀환 후 목적지를 변경합니다.');return true;}
+ let members=this.heroes.filter(a=>a.down<=0&&a.hp>this.stats(a).hp*.25&&a.energy>10).slice(0,5);
+ if(!members.length){this.notice('영웅들이 상처를 회복하는 중입니다. 성역에서 쉬거나 치유를 후원해 주세요.');this.pending={zone,floor};return false;}
+ this.world.resources.food=Math.max(0,this.world.resources.food-members.length*2);
+ const map=this.map(zone,floor),units=members.map((a,i)=>{a.maxHp=this.stats(a).hp;a.hp=Math.min(a.maxHp,Math.max(a.hp,a.maxHp*.65));a.path=[];return{id:a.id,a,u:map.start.u+(i%2)*1.1,v:map.start.v+(Math.floor(i/2)-1)*1.45,path:[],cool:initial?.3+i*.12:1,skill:3+i*.6,face:1,pose:0,shield:0,state:'진입',target:null,repath:0,revive:0,potion:0};});
+ this.mission={zone,floor,room:0,units,enemies:[],projectiles:[],areas:[],corpses:[],loot:[],visited:[0],cleared:[],timer:0,arrive:initial?0:1.8,status:'battle',nextRoom:0,retreat:false,retreatTime:0,rewardGold:0,rewardXP:0,kills:0,started:this.time};this.spawnRoom(0);this.autoTimer=0;this.log(`${members.map(a=>a.name).join('·')} → ${ZONES[zone].name}${zone==='forest'?'':` ${floor}층`} 원정.`);return true;
+ }
+ spawnRoom(n){let m=this.mission;if(!m)return;const r=this.map(m.zone,m.floor).rooms[n];m.room=n;if(!m.visited.includes(n))m.visited.push(n);m.status='battle';m.timer=0;
+ const boss=n===3&&(m.zone!=='tower'||m.floor%5===0||m.floor===1),lv=m.zone==='forest'?Math.max(1,Math.min(8,Math.floor(this.heroes.reduce((s,a)=>s+a.level,0)/this.heroes.length*.75))):m.zone==='dungeon'?1+m.floor*2:Math.ceil(m.floor*.7)+1;
