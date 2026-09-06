@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#091c29"><meta name="robots" content="noindex,nofollow"><title>아스트라 월드 EX · 별을 건네는 자</title><style>
+*{box-sizing:border-box}body{margin:0;min-height:100dvh;display:grid;place-items:center;padding:28px;background:radial-gradient(ellipse at 50% 25%,#204653,#091c29 65%);color:#edf3f3;font-family:system-ui,sans-serif;text-align:center}.card{width:min(420px,100%)}.star{color:#ddbe79;font-size:76px;text-shadow:0 0 36px #d4bc7755}h1{font-size:27px;font-weight:500;letter-spacing:3px;margin:20px 0 10px}.sub{color:#ddbe79;font-size:13px;letter-spacing:4px}p{line-height:1.7;color:#b5cbd0;min-height:54px;font-size:14px}progress{width:100%;height:4px;accent-color:#ddbe79;margin:22px 0}button{border:1px solid #bda16c;border-radius:10px;background:#193440;color:#f6e5bd;padding:14px 28px;font:inherit;cursor:pointer}small{display:block;margin-top:25px;color:#809ca5;line-height:1.7}button[hidden]{display:none}</style></head>
+<body><main class="card"><div class="star">✧</div><div class="sub">성좌의 모형정원</div><h1>아스트라 월드 EX</h1><p id="status" role="status">하나의 세계가 깨어납니다.<br>별빛을 잇고 있습니다.</p><progress id="progress" value="0" max="18"></progress><button id="retry" hidden>다시 연결하기</button><small>설치와 로그인 없이 플레이합니다.<br>진행 기록은 이 브라우저에 저장됩니다.</small></main>
+<script>
+'use strict';
+const files=['p0.txt','p1.txt','p2.txt','p3.txt','p4.txt','p5.txt','p6a.txt','p6b.txt','p6c.txt','p6d.txt','p6e.txt','p6f.txt','p7a.txt','p7b.txt','p7c.txt','p7d.txt','p7e.txt'];
+const expected='d70c2177f8eb66c028b521d540e946ed753658a943836b6c20a0f2234611730d';
+const statusText=document.getElementById('status'),progress=document.getElementById('progress'),retry=document.getElementById('retry');
+retry.addEventListener('click',()=>location.reload());
+(async()=>{const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),25000);try{
+if(!('DecompressionStream' in window)||!window.crypto?.subtle)throw new Error('최신 크롬 또는 사파리에서 이 HTTPS 링크를 열어 주세요.');
+const parts=await Promise.all(files.map(async name=>{const response=await fetch(name,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('게임 파일을 가져오지 못했습니다. 잠시 후 다시 연결해 주세요.');const text=(await response.text()).trim();progress.value++;return text;}));
+const encoded=parts.join('');if(encoded.length!==74288||!/^[A-Za-z0-9+/=]+$/.test(encoded))throw new Error('게임 파일이 불완전합니다. 다시 연결해 주세요.');
+statusText.textContent='세계의 연결과 게임 파일을 확인하고 있습니다.';
+const bytes=Uint8Array.from(atob(encoded),c=>c.charCodeAt(0));
+const raw=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw)),n=>n.toString(16).padStart(2,'0')).join('');
+if(raw.byteLength!==159438||digest!==expected)throw new Error('파일 검증에 실패했습니다. 다시 연결해 주세요.');
+progress.value=18;const html=new TextDecoder('utf-8',{fatal:true}).decode(raw);clearTimeout(timer);document.open();document.write(html);document.close();
+}catch(error){clearTimeout(timer);controller.abort();statusText.textContent=error.name==='AbortError'?'연결 시간이 길어지고 있습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.':error.message||'세계를 불러오지 못했습니다. 다시 연결해 주세요.';retry.hidden=false;console.error('Astra loader:',error);}})();
+</script></body></html>
