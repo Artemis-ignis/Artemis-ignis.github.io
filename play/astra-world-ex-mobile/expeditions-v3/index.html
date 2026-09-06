@@ -1,0 +1,28 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0c1525"><meta name="robots" content="noindex,nofollow"><title>아스트라 월드 EX · 원정과 운명 v3</title><style id="loader-style">*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 20%,#263d5d,#0c1525 70%);color:#e5edf6;font:14px system-ui,sans-serif;min-height:100dvh;display:grid;place-items:center;padding:28px}#loading{width:min(390px,100%);text-align:center}#loading .seal{font-size:70px;color:#ecd2a0;margin-bottom:20px}#loading h1{font-size:28px;font-weight:400;letter-spacing:2px}#loading p{color:#aec3d8;line-height:1.8;min-height:52px}#loading small{display:block;color:#99aeca;line-height:1.9;font-size:11px}#loadprogress{width:100%;height:5px;accent-color:#ecd2a0;margin:18px 0}#retry{display:none;border:1px solid #dac494;border-radius:9px;background:#20324a;color:#ead7b3;padding:14px 28px;margin:16px auto;font:inherit}noscript{color:#e6c6c0}</style></head><body><main id="loading"><div class="seal">✧</div><small>새 실행본 · 원정과 운명 v3</small><h1>아스트라 월드 EX</h1><p id="loadstatus">던전과 탑의 세계를 연결합니다.<br>실행 파일을 확인하고 있습니다.</p><progress id="loadprogress" value="0" max="29"></progress><button id="retry" onclick="location.reload()">다시 연결하기</button><small>던전 8곳 · 시련의 탑 100층<br>자율 전투 · 성장 · 장비 · 전직</small><noscript>게임을 실행하려면 브라우저의 자바스크립트 사용이 필요합니다.</noscript></main>
+<script>
+(async()=>{'use strict';
+const base=['p0.txt','p1.txt','p2.txt','p3.txt','p4.txt','p5.txt','p6a.txt','p6b.txt','p6c.txt','p6d.txt','p6e.txt','p6f.txt','p7a.txt','p7b.txt','p7c.txt','p7d.txt','p7e.txt'];
+const extra=Array.from({length:12},(_,i)=>'v3-'+String(i).padStart(2,'0')+'.txt');
+const status=document.getElementById('loadstatus'),progress=document.getElementById('loadprogress');
+const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),45000);let completed=0;
+async function read(name){const r=await fetch(name.startsWith('v3-')?name:'../'+name,{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('파일을 불러오지 못했습니다: '+name);const text=await r.text();progress.value=++completed;return text;}
+async function digest(bytes){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');}
+function execute(code,name){const s=document.createElement('script');s.textContent=code+'\n//# sourceURL='+name;document.head.appendChild(s);s.remove();}
+try{
+if(!window.crypto?.subtle||!window.DecompressionStream)throw Error('최신 크롬 또는 삼성 인터넷에서 이 HTTPS 주소를 열어 주세요.');
+const [parts,game]=await Promise.all([Promise.all(base.map(read)),Promise.all(extra.map(read))]);
+status.textContent='원정·성장·저장 파일을 검증하고 있습니다.';
+const packed=parts.map(t=>t.trim()).join('');if(packed.length!==74288)throw Error('기초 세계 파일이 불완전합니다. 잠시 후 다시 연결해 주세요.');
+const zip=Uint8Array.from(atob(packed),c=>c.charCodeAt(0));const raw=await new Response(new Blob([zip]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+if(raw.byteLength!==159438||await digest(raw)!=='d70c2177f8eb66c028b521d540e946ed753658a943836b6c20a0f2234611730d')throw Error('기초 세계 파일 검증에 실패했습니다.');
+const update=game.join(''),bytes=new TextEncoder().encode(update);
+if(bytes.length!==126124||await digest(bytes)!=='575c777ec54bbbf346371bba5291647aaf899c2df20a95d2d0a7dba9aa29ed11')throw Error('v3 실행 파일 검증에 실패했습니다. 잠시 후 다시 연결해 주세요.');
+const doc=new DOMParser().parseFromString(new TextDecoder('utf-8',{fatal:true}).decode(raw),'text/html');const scripts=[...doc.querySelectorAll('script')];
+if(scripts.length<2)throw Error('세계 엔진을 찾을 수 없습니다.');
+execute(scripts[0].textContent,'astra-life.js');execute(scripts[1].textContent,'astra-sanctuary-art.js');
+if(!window.AstraEngine||!window.AstraArt)throw Error('세계 엔진을 시작하지 못했습니다.');
+clearTimeout(timer);execute(update,'astra-mobile-v3.js');if(!window.ASTRA_V3_READY)throw Error('게임 초기화에 실패했습니다.');
+}catch(e){clearTimeout(timer);controller.abort();const message=e.name==='AbortError'?'연결이 지연되고 있습니다. 인터넷 연결을 확인한 뒤 다시 연결해 주세요.':e.message||'게임을 불러오지 못했습니다.';
+if(document.getElementById('loadstatus')){status.textContent=message;document.getElementById('retry').style.display='block';}else{const box=document.createElement('div');box.style.cssText='position:fixed;inset:20px;z-index:99999;background:#142338;color:#eee;padding:24px';box.textContent=message;const b=document.createElement('button');b.textContent='다시 연결';b.onclick=()=>location.reload();box.appendChild(b);document.body.appendChild(box);}console.error(e);}
+})();
+</script></body></html>
